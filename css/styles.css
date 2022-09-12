@@ -113,6 +113,7 @@
 .about-content{
     display: flex;
     justify-content: space-between;
+    font-size: large ;
 }
 .par{
     margin-top: 5%;
@@ -128,6 +129,9 @@
     margin-right: 25%;
     margin-left: 2.5%;
 }
+.free-btn{
+    padding-bottom: 60px;
+}
 .free-download{
     display:block ;
     margin-top: 30px;
@@ -139,7 +143,7 @@
     color: white;
     cursor: pointer ;
     border-radius: 5px;
-    font-size: medium;
+    font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .free-download:hover{
