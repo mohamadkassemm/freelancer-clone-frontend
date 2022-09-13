@@ -1,12 +1,19 @@
 <?php
 include("connect.php");
 
-$name= $_POST["full-name"]
-$email= $_POST["email"]
-$phoneNumber= $_POST["phone-number"]
-$messages= $_POST["messages"]
+$query = $mysqli->prepare("SELECT messages FROM `contact-me`");
+$query->execute();
+$array = $query->get_result();
 
-$query = "INSERT INTO articles(name, author) VALUE (" . $name .", ?)";
+$response = [];
+
+while($a = $array->fetch_assoc()){
+    $response[] = $a;
+}
+
+$json = json_encode($response);
+echo $json;
+
 
 ?>
 
