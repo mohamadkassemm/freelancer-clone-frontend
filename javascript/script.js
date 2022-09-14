@@ -35,7 +35,7 @@ function submit(){
     message.style.borderBlockColor="#2c3e50"
    }
 
-//    if(message.style.borderBlockColor=="#2c3e50" & Name.style.borderBlockColor=="#2c3e50" & phonenumber.style.borderBlockColor=="#2c3e50"){
+  if(message.value.length>=100 && Name.value.length>=5){
         let information={
         method: 'POST',
         body: new URLSearchParams({
@@ -49,5 +49,5 @@ function submit(){
         .then(Response => Response.json())
         .then(data => console.log(data))
     
-   
+   }
 }
