@@ -1,4 +1,5 @@
 <?php
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
@@ -16,7 +17,6 @@ while($a = $array->fetch_assoc()){
 
 $json = json_encode($response);
 echo $json;
-
 
 ?>
 

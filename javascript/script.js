@@ -35,16 +35,19 @@ function submit(){
     message.style.borderBlockColor="#2c3e50"
    }
 
-   let information={
-    method: 'POST',
-    body: new URLSearchParams({
-        fullname:Name.value,
-        email:email.value,
-        phonenumber:phonenumber.value,
-        messages:message.value,
-    })
-   }
-   fetch("http://localhost/bootstrap%20clone/php%20files/add-msge.php",information)
-   .then(Response => Response.json())
-   .then(data => console.log(data))
+//    if(message.style.borderBlockColor=="#2c3e50" & Name.style.borderBlockColor=="#2c3e50" & phonenumber.style.borderBlockColor=="#2c3e50"){
+        let information={
+        method: 'POST',
+        body: new URLSearchParams({
+            fullname:Name.value,
+            email:email.value,
+            phonenumber:phonenumber.value,
+            messages:message.value,
+        })
+        }
+        fetch("http://localhost/bootstrap%20clone/php%20files/add-msge.php",information)
+        .then(Response => Response.json())
+        .then(data => console.log(data))
+    
+   
 }
