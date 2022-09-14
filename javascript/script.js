@@ -1,7 +1,7 @@
 const Name=document.getElementById("name")
-const MAIL=document.getElementById("email")
-const PN=document.getElementById("number")
-const Comment=document.getElementById("message")
+const email=document.getElementById("email")
+const phonenumber=document.getElementById("number")
+const message=document.getElementById("message")
 const Send= document.getElementById("send-btn")
 
 Send.addEventListener("click", submit)
@@ -13,25 +13,38 @@ function submit(){
         Name.style.borderBlockColor="#2c3e50"
     }
 
-    // if (MAIL.value.indexOf("@")=-1){
+    // if (email.value.indexOf("@")=-1){
     //     console.log("hi")
     // }
 
-    let pn=PN.value
+    let pn=phonenumber.value
    if (pn.substring(0,4)=='+961'){
     if(pn.slice(4).length>8 & pn.slice(4).length<10){
-        PN.value=PN.value
-        PN.style.borderBlockColor="#2c3e50"
+        phonenumber.value=phonenumber.value
+        phonenumber.style.borderBlockColor="#2c3e50"
     }else{
-        PN.style.borderBlockColor="red"
+        phonenumber.style.borderBlockColor="red"
     }
    }else{
-    PN.style.borderBlockColor="red"
+    phonenumber.style.borderBlockColor="red"
    }
     
-   if (Comment.value.length <100){
-    Comment.style.borderBlockColor="red"
+   if (message.value.length <100){
+    message.style.borderBlockColor="red"
    }else{
-    Comment.style.borderBlockColor="#2c3e50"
+    message.style.borderBlockColor="#2c3e50"
    }
+
+   let information={
+    method: 'POST',
+    body: new URLSearchParams({
+        fullname:Name.value,
+        email:email.value,
+        phonenumber:phonenumber.value,
+        messages:message.value,
+    })
+   }
+   fetch("http://localhost/bootstrap%20clone/php%20files/add-msge.php",information)
+   .then(Response => Response.json())
+   .then(data => console.log(data))
 }
